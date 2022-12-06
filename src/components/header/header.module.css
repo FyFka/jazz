@@ -1,0 +1,35 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 4rem;
+  width: 100%;
+  background-color: #161b22;
+  border-bottom: 2px solid #21262d;
+  z-index: 7999;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+.routes {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+  list-style: none;
+}
+
+.route {
+  color: #f0f6fc;
+  white-space: nowrap;
+  font-weight: 700;
+}
+.route:hover {
+  color: #ffffffb3;
+}

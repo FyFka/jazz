@@ -1,0 +1,38 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #161b22;
+  border: 1px solid #21262d;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.error {
+  margin: 0;
+  color: #f85149;
+  font-size: 1rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.submit {
+  width: 100%;
+  background-color: #238636;
+}
+.submit:hover {
+  background-color: #2ea043;
+}

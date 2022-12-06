@@ -1,0 +1,21 @@
+.miniProfile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  border-radius: 100%;
+  overflow: hidden;
+  border: 1px solid #21262d;
+}
+
+.avatarInner {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+}
+
+.username {
+  margin: 0;
+}
