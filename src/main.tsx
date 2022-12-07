@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { store } from "./store/store";
 import ProfilePage from "./pages/profile/page";
 import Calendar from "./pages/calendar/page";
-import TicTacToe from "./pages/ticTacToe/page";
+import AnyDataTable from "./pages/any-data/page";
 import "./globals.css";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
@@ -19,7 +19,7 @@ createRoot(document.getElementById("root") as HTMLElement).render(
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/calendar" element={<Calendar />} />
-            <Route path="/tic-tac-toe" element={<TicTacToe />} />
+            <Route path="/any-data" element={<AnyDataTable />} />
           </Routes>
         </Layout>
       </BrowserRouter>

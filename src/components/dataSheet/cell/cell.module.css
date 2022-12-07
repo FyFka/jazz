@@ -1,0 +1,31 @@
+.cell {
+  padding: 0.375rem 0.813rem;
+  border: 1px solid #21262d;
+  background-color: #161b22;
+  cursor: cell;
+  user-select: none;
+}
+
+.stickyCell {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 0.375rem 0.813rem;
+  border: 1px solid #21262d;
+  background-color: #0d1117;
+  cursor: cell;
+  user-select: none;
+}
+
+.highlight {
+  background-color: #1e4273;
+}
+
+.edit {
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  cursor: cell;
+}
