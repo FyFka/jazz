@@ -1,6 +1,6 @@
 export const authRoutes = [
   { name: "Home", path: "/" },
-  { name: "Calendar", path: "/calendar" },
+  { name: "Information", path: "/info" },
   { name: "Data sheet", path: "/any-data" },
 ];
 

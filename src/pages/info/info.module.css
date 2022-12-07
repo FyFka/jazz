@@ -1,0 +1,10 @@
+.infoPage {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.info {
+  max-width: 50rem;
+  white-space: pre;
+}

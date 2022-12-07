@@ -6,8 +6,9 @@ import LoginPage from "./pages/login/page";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
 import ProfilePage from "./pages/profile/page";
-import Calendar from "./pages/calendar/page";
 import AnyDataTable from "./pages/any-data/page";
+import InfoPage from "./pages/info/page";
+import HomePage from "./pages/home/home";
 import "./globals.css";
 
 createRoot(document.getElementById("root") as HTMLElement).render(
@@ -16,10 +17,11 @@ createRoot(document.getElementById("root") as HTMLElement).render(
       <BrowserRouter>
         <Layout>
           <Routes>
+            <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/calendar" element={<Calendar />} />
             <Route path="/any-data" element={<AnyDataTable />} />
+            <Route path="/info" element={<InfoPage />} />
           </Routes>
         </Layout>
       </BrowserRouter>

@@ -17,4 +17,4 @@ function ProfilePage({ user }: IProfilePageProps) {
   );
 }
 
-export default withAccess(ProfilePage, true, "/login");
+export default withAccess(ProfilePage, true);

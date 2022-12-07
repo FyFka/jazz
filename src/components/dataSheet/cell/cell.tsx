@@ -29,7 +29,6 @@ export default function Cell({
   };
 
   const handleCellEdit = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(pos);
     onCellEdit(pos, evt.target.value);
   };
 
@@ -42,12 +41,12 @@ export default function Cell({
     return (posX && posY) || (negX && posY) || (negX && negY) || (posX && negY);
   };
 
-  const highlight = isHighlighted(pos.row, pos.col);
+  const isHighlight = isHighlighted(pos.row, pos.col);
   return (
     <td
       onMouseDown={handleCellClick}
       onMouseOver={handleMouseOver}
-      className={`${sticky ? styles.stickyCell : styles.cell} ${highlight ? styles.highlight : ""}`}
+      className={`${sticky ? styles.stickyCell : styles.cell} ${isHighlight ? styles.highlight : ""}`}
     >
       <input className={styles.edit} value={value} onChange={handleCellEdit} />
     </td>

@@ -4,4 +4,7 @@ export interface IRootStore {
   user: {
     value: IUser | null;
   };
+  info: {
+    value: string | null;
+  };
 }
