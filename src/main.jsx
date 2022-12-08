@@ -11,7 +11,7 @@ import InfoPage from "./pages/info/page";
 import HomePage from "./pages/home/home";
 import "./globals.css";
 
-createRoot(document.getElementById("root") as HTMLElement).render(
+createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>

@@ -1,33 +1,33 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../api/login";
 import withAccess from "../../hoc/withAccess";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { setUser } from "../../store/slices/user";
 import styles from "./login.module.css";
 
 function LoginPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [meta, setMeta] = useState<{ error: string; fetching: boolean }>({ error: "", fetching: false });
+  const [meta, setMeta] = useState({ error: "", fetching: false });
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
-  const handleUsernameChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handleUsernameChange = (evt) => {
     setUsername(evt.target.value);
   };
 
-  const handlePasswordChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePasswordChange = (evt) => {
     setPassword(evt.target.value);
   };
 
-  const handleAuth = async (evt: React.FormEvent<HTMLFormElement>) => {
+  const handleAuth = async (evt) => {
     evt.preventDefault();
     setMeta((prev) => ({ ...prev, fetching: true }));
 
     const result = await login(username, password);
     if (result.message) {
-      setMeta((prev) => ({ ...prev, error: result.message! }));
+      setMeta((prev) => ({ ...prev, error: result.message }));
     } else if (result.data) {
       dispatch(setUser(result.data));
       navigate("/profile");

@@ -1,11 +1,7 @@
 import Header from "../components/header/header";
 import styles from "./layout.module.css";
 
-interface ILayoutProps {
-  children: React.ReactNode;
-}
-
-export default function Layout({ children }: ILayoutProps) {
+export default function Layout({ children }) {
   return (
     <>
       <Header />

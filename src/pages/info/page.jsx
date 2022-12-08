@@ -1,13 +1,12 @@
 import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { getReadme } from "../../api/readme";
-import { useAppDispatch } from "../../hooks/useAppDispatch";
-import { useAppSelector } from "../../hooks/useAppSelector";
 import { setInfo } from "../../store/slices/info";
 import styles from "./info.module.css";
 
 export default function InfoPage() {
-  const info = useAppSelector((state) => state.info.value);
-  const dispatch = useAppDispatch();
+  const info = useSelector((state) => state.info.value);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const controller = new AbortController();

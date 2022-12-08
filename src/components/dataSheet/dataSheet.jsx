@@ -2,21 +2,12 @@ import Body from "./body/body";
 import Head from "./head/head";
 import { useEffect, useState } from "react";
 import Island from "../island/island";
-import { IPos, ISelectedZone } from "../../types/ISelectedZone";
-import { IAnyData } from "../../types/IAnyData";
 import styles from "./dataSheet.module.css";
 
-interface IDataSheetProps {
-  data: IAnyData[][];
-}
-
-export default function DataSheet({ data }: IDataSheetProps) {
+export default function DataSheet({ data }) {
   const [anyData, setAnyData] = useState(data);
   const [selecting, setSelecting] = useState(false);
-  const [selectedZone, setSelectedZone] = useState<ISelectedZone>({
-    start: { row: 0, col: 0 },
-    end: { row: 0, col: 0 },
-  });
+  const [selectedZone, setSelectedZone] = useState({ start: { row: 0, col: 0 }, end: { row: 0, col: 0 } });
 
   useEffect(() => {
     return () => {
@@ -24,7 +15,7 @@ export default function DataSheet({ data }: IDataSheetProps) {
     };
   }, []);
 
-  const handleEdit = (pos: IPos, value: string) => {
+  const handleEdit = (pos, value) => {
     const newData = [...anyData];
     newData[pos.row + 1][pos.col].value = value;
     setAnyData(newData);
@@ -35,13 +26,13 @@ export default function DataSheet({ data }: IDataSheetProps) {
     document.removeEventListener("mouseup", handleMouseUp);
   };
 
-  const handleCellDown = (pos: IPos) => {
+  const handleCellDown = (pos) => {
     setSelecting(true);
     setSelectedZone({ end: pos, start: pos });
     document.addEventListener("mouseup", handleMouseUp);
   };
 
-  const handleCellMouseOver = (pos: IPos) => {
+  const handleCellMouseOver = (pos) => {
     if (selecting) {
       setSelectedZone((prev) => ({ ...prev, end: pos }));
     }

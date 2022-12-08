@@ -1,25 +1,6 @@
-import { IPos, ISelectedZone } from "../../../types/ISelectedZone";
 import styles from "./cell.module.css";
 
-interface ICellProps {
-  sticky?: boolean;
-  onCellDown: (pos: IPos) => void;
-  onCellMouseOver: (pos: IPos) => void;
-  onCellEdit: (pos: IPos, value: string) => void;
-  pos: { row: number; col: number };
-  selectedZone: ISelectedZone;
-  value: string;
-}
-
-export default function Cell({
-  value,
-  sticky,
-  onCellDown,
-  onCellMouseOver,
-  pos,
-  selectedZone,
-  onCellEdit,
-}: ICellProps) {
+export default function Cell({ value, sticky, onCellDown, onCellMouseOver, pos, selectedZone, onCellEdit }) {
   const handleCellClick = () => {
     onCellDown(pos);
   };
@@ -28,11 +9,11 @@ export default function Cell({
     onCellMouseOver(pos);
   };
 
-  const handleCellEdit = (evt: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCellEdit = (evt) => {
     onCellEdit(pos, evt.target.value);
   };
 
-  const isHighlighted = (row: number, col: number) => {
+  const isHighlighted = (row, col) => {
     const posX = row >= selectedZone.start.row && row <= selectedZone.end.row;
     const negX = row <= selectedZone.start.row && row >= selectedZone.end.row;
     const posY = col >= selectedZone.start.col && col <= selectedZone.end.col;

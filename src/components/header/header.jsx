@@ -1,11 +1,11 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { authRoutes, publicRoutes } from "../../constants/routes";
-import { useAppSelector } from "../../hooks/useAppSelector";
 import MiniProfile from "../miniProfile/miniProfile";
 import styles from "./header.module.css";
 
 export default function Header() {
-  const user = useAppSelector((state) => state.user.value);
+  const user = useSelector((state) => state.user.value);
 
   const routes = user ? authRoutes : publicRoutes;
   return (

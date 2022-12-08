@@ -1,11 +1,6 @@
-import { IAnyData } from "../../../types/IAnyData";
 import styles from "./head.module.css";
 
-interface IHeadProps {
-  head: IAnyData[];
-}
-
-export default function Head({ head }: IHeadProps) {
+export default function Head({ head }) {
   return (
     <thead className={styles.head}>
       <tr>

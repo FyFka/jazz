@@ -1,12 +1,7 @@
 import withAccess from "../../hoc/withAccess";
-import { IUser } from "../../types/IUser";
 import styles from "./profile.module.css";
 
-interface IProfilePageProps {
-  user: IUser;
-}
-
-function ProfilePage({ user }: IProfilePageProps) {
+function ProfilePage({ user }) {
   return (
     <section className={styles.profile}>
       <div className={styles.avatar}>

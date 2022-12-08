@@ -1,16 +1,6 @@
-import { IAnyData } from "../../../types/IAnyData";
-import { IPos, ISelectedZone } from "../../../types/ISelectedZone";
 import Cell from "../cell/cell";
 
-interface IBodyProps {
-  body: IAnyData[][];
-  onCellDown: (pos: IPos) => void;
-  onCellMouseOver: (pos: IPos) => void;
-  onCellEdit: (pos: IPos, value: string) => void;
-  selectedZone: ISelectedZone;
-}
-
-export default function Body({ body, onCellDown, onCellMouseOver, selectedZone, onCellEdit }: IBodyProps) {
+export default function Body({ body, onCellDown, onCellMouseOver, selectedZone, onCellEdit }) {
   return (
     <tbody>
       {body.map((row, rowIdx) => (
